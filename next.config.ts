@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  // 如果你的仓库名不是 username.github.io，而是一个普通项目名
+  // 则需要添加：
+  // basePath: '/your-repo-name',
+}
 
-export default nextConfig;
+export default nextConfig
