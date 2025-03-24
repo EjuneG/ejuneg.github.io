@@ -27,11 +27,11 @@ export default function Navigation() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-10">
+    <header className="bg-gray-900 shadow-lg sticky top-0 z-10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-gray-900 tracking-tight">
+            <Link href="/" className="text-xl font-bold text-white tracking-tight">
               游戏策划作品集
             </Link>
           </div>
@@ -44,8 +44,8 @@ export default function Navigation() {
                 key={link.href}
                 className={`transition-colors font-medium ${
                   isActive(link.href) 
-                    ? "text-blue-600" 
-                    : "text-gray-700 hover:text-blue-600"
+                    ? "text-blue-400" 
+                    : "text-gray-300 hover:text-blue-400"
                 }`}
               >
                 {link.label}
@@ -57,7 +57,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button 
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="text-gray-300 hover:text-white focus:outline-none"
             >
               <svg 
                 className="h-6 w-6" 
@@ -88,7 +88,7 @@ export default function Navigation() {
       
       {/* 移动端导航菜单 */}
       {menuOpen && (
-        <nav className="md:hidden bg-white pb-4 px-4">
+        <nav className="md:hidden bg-gray-800 pb-4 px-4">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <Link 
@@ -96,8 +96,8 @@ export default function Navigation() {
                 key={link.href}
                 className={`block py-2 px-4 rounded transition-colors ${
                   isActive(link.href) 
-                    ? "bg-blue-50 text-blue-600 font-medium" 
-                    : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                    ? "bg-gray-700 text-blue-400 font-medium" 
+                    : "text-gray-300 hover:bg-gray-700 hover:text-blue-400"
                 }`}
                 onClick={() => setMenuOpen(false)}
               >
