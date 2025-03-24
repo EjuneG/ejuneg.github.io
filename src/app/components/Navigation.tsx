@@ -27,25 +27,25 @@ export default function Navigation() {
   };
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-sm sticky top-0 z-10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-gray-900">
+            <Link href="/" className="text-xl font-bold text-gray-900 tracking-tight">
               游戏策划作品集
             </Link>
           </div>
           
           {/* 桌面端导航 */}
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <Link 
                 href={link.href} 
                 key={link.href}
-                className={`transition-colors ${
+                className={`transition-colors font-medium ${
                   isActive(link.href) 
-                    ? "text-blue-500 font-medium" 
-                    : "text-gray-600 hover:text-blue-500"
+                    ? "text-blue-600" 
+                    : "text-gray-700 hover:text-blue-600"
                 }`}
               >
                 {link.label}
@@ -57,7 +57,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button 
               onClick={toggleMenu}
-              className="text-gray-500 hover:text-gray-700 focus:outline-none"
+              className="text-gray-700 hover:text-blue-600 focus:outline-none"
             >
               <svg 
                 className="h-6 w-6" 
@@ -89,15 +89,15 @@ export default function Navigation() {
       {/* 移动端导航菜单 */}
       {menuOpen && (
         <nav className="md:hidden bg-white pb-4 px-4">
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <Link 
                 href={link.href} 
                 key={link.href}
                 className={`block py-2 px-4 rounded transition-colors ${
                   isActive(link.href) 
-                    ? "bg-blue-50 text-blue-500 font-medium" 
-                    : "text-gray-600 hover:bg-gray-50 hover:text-blue-500"
+                    ? "bg-blue-50 text-blue-600 font-medium" 
+                    : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
                 }`}
                 onClick={() => setMenuOpen(false)}
               >
